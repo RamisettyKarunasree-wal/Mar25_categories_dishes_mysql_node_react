@@ -1,0 +1,10 @@
+const express = require('express');
+const dishesController = require('../controllers/dishes');
+const router = express.Router();
+router.get('/createTable', dishesController.createDishesTable);
+router.get('/', dishesController.getDishes);
+router.get('/:name', dishesController.viewDish);
+router.post('/', dishesController.postDishes);
+router.delete('/:name', dishesController.deleteDishes);
+router.put('/:name', dishesController.updateDishes);
+module.exports = router;
